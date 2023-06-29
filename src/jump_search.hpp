@@ -5,21 +5,23 @@
 template <typename T>
 int jump_search(T item, T *values, int length)
 {
-  int i = 0,
+  int i,
       step = (int)floor(sqrt((double)length)),
       prev = 0,
       result = -1;
   assert(length > 0);
-
-  while (values[i] < item && i < length)
+  for (i = step; values[i] < item && i < length; i += step)
   {
     prev = i;
-    i += step;
   }
-
-  while (++prev < i)
+  while (prev <= i && prev < length)
+  {
     if (values[prev] == item)
+    {
       result = prev;
-
+      break;
+    }
+    prev++;
+  }
   return result;
 }
