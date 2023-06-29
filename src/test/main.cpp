@@ -92,5 +92,6 @@ int main()
   assert(interpolation_search<long long>(2600, arr3, NUM) == -1);
 
   std::cout << "Passed all tests successfully!\n";
+
   return 0;
 }
