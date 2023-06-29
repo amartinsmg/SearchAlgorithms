@@ -55,23 +55,23 @@ int main()
                          9216, 9604, 10000, 10000};
 
   assert(linearSearch<int>(37, arr1, NUM) == 43);
-  assert(linearSearch<int>(19, arr1, NUM) == -1);
+  assert(linearSearch<int>(100, arr1, NUM) == 126);
   assert(linearSearch<double>(34.21, arr2, NUM) == 47);
-  assert(linearSearch<double>(64.5, arr2, NUM) == -1);
+  assert(linearSearch<double>(2.14, arr2, NUM) == 0);
   assert(linearSearch<long long>(4900, arr3, NUM) == 86);
   assert(linearSearch<long long>(2600, arr3, NUM) == -1);
 
   assert(binary_search<int>(37, arr1, NUM) == 43);
-  assert(binary_search<int>(19, arr1, NUM) == -1);
+  assert(binary_search<int>(100, arr1, NUM) == 126);
   assert(binary_search<double>(34.21, arr2, NUM) == 47);
-  assert(binary_search<double>(64.5, arr2, NUM) == -1);
+  assert(binary_search<double>(2.14, arr2, NUM) == 0);
   assert(binary_search<long long>(4900, arr3, NUM) == 86);
   assert(binary_search<long long>(2600, arr3, NUM) == -1);
 
   assert(jump_search<int>(37, arr1, NUM) == 43);
-  assert(jump_search<int>(19, arr1, NUM) == -1);
+  assert(jump_search<int>(100, arr1, NUM) == 126);
   assert(jump_search<double>(34.21, arr2, NUM) == 47);
-  assert(jump_search<double>(64.5, arr2, NUM) == -1);
+  assert(jump_search<double>(2.14, arr2, NUM) == 0);
   assert(jump_search<long long>(4900, arr3, NUM) == 86);
   assert(jump_search<long long>(2600, arr3, NUM) == -1);
 
