@@ -18,6 +18,5 @@ int binary_search(T item, T *values, int length)
       low = mid + 1;
     mid = (low + high) / 2;
   }
-
   return result;
 }
