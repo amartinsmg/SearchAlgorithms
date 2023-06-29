@@ -1,7 +1,8 @@
 #include <iostream>
 #include <cassert>
-#include <linear_search.hpp>
 #include <binary_search.hpp>
+#include <jump_search.hpp>
+#include <linear_search.hpp>
 
 #define NUM 127
 
@@ -66,6 +67,13 @@ int main()
   assert(binary_search<double>(64.5, arr2, NUM) == -1);
   assert(binary_search<long long>(4900, arr3, NUM) == 86);
   assert(binary_search<long long>(2600, arr3, NUM) == -1);
+
+  assert(jump_search<int>(37, arr1, NUM) == 43);
+  assert(jump_search<int>(19, arr1, NUM) == -1);
+  assert(jump_search<double>(34.21, arr2, NUM) == 47);
+  assert(jump_search<double>(64.5, arr2, NUM) == -1);
+  assert(jump_search<long long>(4900, arr3, NUM) == 86);
+  assert(jump_search<long long>(2600, arr3, NUM) == -1);
 
   std::cout << "Passed all tests successfully!\n";
   return 0;
