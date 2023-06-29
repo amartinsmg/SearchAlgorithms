@@ -10,7 +10,7 @@ int jump_search(T item, T *values, int length)
       prev = 0,
       result = -1;
   assert(length > 0);
-  for (i = step; values[i] < item && i < length; i += step)
+  for (i = step; i < length && values[i] < item; i += step)
   {
     prev = i;
   }
