@@ -2,6 +2,7 @@
 #include <cassert>
 #include <binary_search.hpp>
 #include <exponential_search.hpp>
+#include <interpolation_search.hpp>
 #include <jump_search.hpp>
 #include <linear_search.hpp>
 
@@ -82,6 +83,13 @@ int main()
   assert(exponential_search<double>(2.14, arr2, NUM) == 0);
   assert(exponential_search<long long>(4900, arr3, NUM) == 86);
   assert(exponential_search<long long>(2600, arr3, NUM) == -1);
+
+  assert(interpolation_search<int>(37, arr1, NUM) == 43);
+  assert(interpolation_search<int>(100, arr1, NUM) == 126);
+  assert(interpolation_search<double>(34.21, arr2, NUM) == 47);
+  assert(interpolation_search<double>(2.14, arr2, NUM) == 0);
+  assert(interpolation_search<long long>(4900, arr3, NUM) == 86);
+  assert(interpolation_search<long long>(2600, arr3, NUM) == -1);
 
   std::cout << "Passed all tests successfully!\n";
   return 0;
