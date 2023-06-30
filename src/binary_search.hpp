@@ -1,7 +1,7 @@
 #include <cassert>
 
 template <typename T>
-int binarySearch(T target, T *values, int length)
+int binarySearch(T target, T *arr, int length)
 {
   int low = 0,
       high = length - 1,
@@ -10,12 +10,12 @@ int binarySearch(T target, T *values, int length)
   assert(length > 0);
   while (low <= high)
   {
-    if (values[mid] == target)
+    if (arr[mid] == target)
     {
       result = mid;
       break;
     }
-    else if (values[mid] > target)
+    else if (arr[mid] > target)
       high = mid - 1;
     else
       low = mid + 1;
