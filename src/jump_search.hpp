@@ -1,26 +1,23 @@
+#include <algorithm>
 #include <cassert>
 #include <cmath>
 
 template <typename T>
-int jump_search(T item, T *values, int length)
+int jumpSearch(T target, T *values, int length)
 {
-  int i,
-      step = (int)floor(sqrt((double)length)),
-      prev = 0,
+  int i, high, step,
+      low = 0,
       result = -1;
   assert(length > 0);
-  for (i = step; i < length && values[i] < item; i += step)
-  {
-    prev = i;
-  }
-  while (prev <= i && prev < length)
-  {
-    if (values[prev] == item)
+  step = (int)round(sqrt((double)length));
+  for (i = step; i < length && values[i] < target; i += step)
+    low = i;
+  high = std::min(length, i);
+  for (i = low; i < high; i++)
+    if (values[i] == target)
     {
-      result = prev;
+      result = i;
       break;
     }
-    prev++;
-  }
   return result;
 }
