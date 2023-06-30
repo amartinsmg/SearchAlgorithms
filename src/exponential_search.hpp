@@ -1,22 +1,25 @@
+#include <algorithm>
 #include <cassert>
 
 template <typename T>
-int exponential_search(T item, T *values, int length)
+int exponentialSearch(T target, T *values, int length)
 {
-  int low = 0, high, mid, result = -1;
+  int high, i, mid,
+      low = 0,
+      result = -1;
   assert(length > 0);
-  for (high = 1; high < length && values[high - 1] < item; high *= 2)
-    low = high - 1;
-  if (high > length)
-    high = length - 1;
-  else
-    high--;
-  while (result == -1 && low <= high)
+  for (i = 1; i < length && values[i - 1] < target; i *= 2)
+    low = i - 1;
+  high = std::min(i, length) - 1;
+  while (low <= high)
   {
     mid = (low + high) / 2;
-    if (values[mid] == item)
+    if (values[mid] == target)
+    {
       result = mid;
-    else if (values[mid] > item)
+      break;
+    }
+    else if (values[mid] > target)
       high = mid - 1;
     else
       low = mid + 1;
