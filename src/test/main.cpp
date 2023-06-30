@@ -63,33 +63,33 @@ int main()
   assert(linearSearch<long long>(4900, arr3, NUM) == 86);
   assert(linearSearch<long long>(2600, arr3, NUM) == -1);
 
-  assert(binary_search<int>(37, arr1, NUM) == 43);
-  assert(binary_search<int>(100, arr1, NUM) == 126);
-  assert(binary_search<double>(34.21, arr2, NUM) == 47);
-  assert(binary_search<double>(2.14, arr2, NUM) == 0);
-  assert(binary_search<long long>(4900, arr3, NUM) == 86);
-  assert(binary_search<long long>(2600, arr3, NUM) == -1);
+  assert(binarySearch<int>(37, arr1, NUM) == 43);
+  assert(binarySearch<int>(100, arr1, NUM) == 126);
+  assert(binarySearch<double>(34.21, arr2, NUM) == 47);
+  assert(binarySearch<double>(2.14, arr2, NUM) == 0);
+  assert(binarySearch<long long>(4900, arr3, NUM) == 86);
+  assert(binarySearch<long long>(2600, arr3, NUM) == -1);
 
-  assert(jump_search<int>(37, arr1, NUM) == 43);
-  assert(jump_search<int>(100, arr1, NUM) == 126);
-  assert(jump_search<double>(34.21, arr2, NUM) == 47);
-  assert(jump_search<double>(2.14, arr2, NUM) == 0);
-  assert(jump_search<long long>(4900, arr3, NUM) == 86);
-  assert(jump_search<long long>(2600, arr3, NUM) == -1);
+  assert(jumpSearch<int>(37, arr1, NUM) == 43);
+  assert(jumpSearch<int>(100, arr1, NUM) == 126);
+  assert(jumpSearch<double>(34.21, arr2, NUM) == 47);
+  assert(jumpSearch<double>(2.14, arr2, NUM) == 0);
+  assert(jumpSearch<long long>(4900, arr3, NUM) == 86);
+  assert(jumpSearch<long long>(2600, arr3, NUM) == -1);
 
-  assert(exponential_search<int>(37, arr1, NUM) == 43);
-  assert(exponential_search<int>(100, arr1, NUM) == 126);
-  assert(exponential_search<double>(34.21, arr2, NUM) == 47);
-  assert(exponential_search<double>(2.14, arr2, NUM) == 0);
-  assert(exponential_search<long long>(4900, arr3, NUM) == 86);
-  assert(exponential_search<long long>(2600, arr3, NUM) == -1);
+  assert(exponentialSearch<int>(37, arr1, NUM) == 43);
+  assert(exponentialSearch<int>(100, arr1, NUM) == 126);
+  assert(exponentialSearch<double>(34.21, arr2, NUM) == 47);
+  assert(exponentialSearch<double>(2.14, arr2, NUM) == 0);
+  assert(exponentialSearch<long long>(4900, arr3, NUM) == 86);
+  assert(exponentialSearch<long long>(2600, arr3, NUM) == -1);
 
-  assert(interpolation_search<int>(37, arr1, NUM) == 43);
-  assert(interpolation_search<int>(100, arr1, NUM) == 126);
-  assert(interpolation_search<double>(34.21, arr2, NUM) == 47);
-  assert(interpolation_search<double>(2.14, arr2, NUM) == 0);
-  assert(interpolation_search<long long>(4900, arr3, NUM) == 86);
-  assert(interpolation_search<long long>(2600, arr3, NUM) == -1);
+  assert(interpolationSearch<int>(37, arr1, NUM) == 43);
+  assert(interpolationSearch<int>(100, arr1, NUM) == 126);
+  assert(interpolationSearch<double>(34.21, arr2, NUM) == 47);
+  assert(interpolationSearch<double>(2.14, arr2, NUM) == 0);
+  assert(interpolationSearch<long long>(4900, arr3, NUM) == 86);
+  assert(interpolationSearch<long long>(2600, arr3, NUM) == -1);
 
   std::cout << "Passed all tests successfully!\n";
 
