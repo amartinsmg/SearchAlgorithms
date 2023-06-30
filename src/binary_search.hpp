@@ -1,18 +1,21 @@
 #include <cassert>
 
 template <typename T>
-int binary_search(T item, T *values, int length)
+int binarySearch(T target, T *values, int length)
 {
   int low = 0,
       high = length - 1,
       mid = high / 2,
       result = -1;
   assert(length > 0);
-  while (result == -1 && low <= high)
+  while (low <= high)
   {
-    if (values[mid] == item)
+    if (values[mid] == target)
+    {
       result = mid;
-    else if (values[mid] > item)
+      break;
+    }
+    else if (values[mid] > target)
       high = mid - 1;
     else
       low = mid + 1;
