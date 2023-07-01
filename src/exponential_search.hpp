@@ -1,6 +1,15 @@
 #include <algorithm>
 #include <cassert>
 
+/**
+  @brief Performs a exponential search on a sorted array to find a target value.
+  @tparam T The type of the elements in the array.
+  @param target The target value to search for.
+  @param arr The sorted array to search in.
+  @param length The length of the array.
+  @return The index of the target value in the array if found, -1 otherwise.
+*/
+
 template <typename T>
 int exponentialSearch(T target, T *arr, int length)
 {
