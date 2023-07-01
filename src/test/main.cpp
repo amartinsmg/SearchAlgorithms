@@ -8,6 +8,14 @@
 
 #define NUM 127
 
+/**
+  @brief Main function to test search algorithms.
+  This function tests different search algorithms by performing searches on three distinct
+  arrays: one containing doubles, another containing integers, and a third containing long
+  longs. It compares the results with expected values.
+  @return An integer representing the exit status of the program.
+*/
+
 int main()
 {
   int arr1[NUM] = {2, 2, 2, 2, 4, 5, 6, 6, 6, 7, 7, 8, 8, 8, 9,
