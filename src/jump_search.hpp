@@ -2,6 +2,9 @@
 #include <cassert>
 #include <cmath>
 
+#ifndef JUMP_SEARCH_HPP
+#define JUMP_SEARCH_HPP
+
 /**
   @brief Performs a jump search on a sorted array to find a target value.
   @tparam T The type of the elements in the array.
@@ -30,3 +33,5 @@ int jumpSearch(T target, T *arr, int length)
     }
   return result;
 }
+
+#endif /* JUMP_SEARCH_HPP */
