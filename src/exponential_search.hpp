@@ -1,6 +1,9 @@
 #include <algorithm>
 #include <cassert>
 
+#ifndef EXPONENTIAL_SEARCH_HPP
+#define EXPONENTIAL_SEARCH_HPP
+
 /**
   @brief Performs a exponential search on a sorted array to find a target value.
   @tparam T The type of the elements in the array.
@@ -35,3 +38,5 @@ int exponentialSearch(T target, T *arr, int length)
   }
   return result;
 }
+
+#endif /* EXPONENTIAL_SEARCH_HPP */
