@@ -1,5 +1,8 @@
 #include <cassert>
 
+#ifndef BINARY_SEARCH_HPP
+#define BINARY_SEARCH_HPP
+
 /**
   @brief Performs a binary search on a sorted array to find a target value.
   @tparam T The type of the elements in the array.
@@ -32,3 +35,5 @@ int binarySearch(T target, T *arr, int length)
   }
   return result;
 }
+
+#endif /* BINARY_SEARCH_HPP */
