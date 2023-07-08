@@ -1,5 +1,8 @@
 #include <cassert>
 
+#ifndef LINEAR_SEARCH_HPP
+#define LINEAR_SEARCH_HPP
+
 /**
   @brief Performs a linear search on a sorted array to find a target value.
   @tparam T The type of the elements in the array.
@@ -22,3 +25,5 @@ int linearSearch(T target, T *arr, int length)
     }
   return result;
 }
+
+#endif /* LINEAR_SEARCH_HPP */
