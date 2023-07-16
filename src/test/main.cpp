@@ -2,9 +2,12 @@
 #include <cassert>
 #include <binary_search.hpp>
 #include <exponential_search.hpp>
+#include <fibonacci_search.hpp>
 #include <interpolation_search.hpp>
 #include <jump_search.hpp>
 #include <linear_search.hpp>
+#include <meta_binary_search.hpp>
+#include <sentinel_linear_search.hpp>
 #include "include/test.hpp"
 
 #define SIZE 127
@@ -99,6 +102,27 @@ int main()
   test(28, interpolationSearch<double>(2.14, arr2, SIZE) == 0);
   test(29, interpolationSearch<long long>(4900, arr3, SIZE) == 86);
   test(30, interpolationSearch<long long>(2600, arr3, SIZE) == -1);
+
+  test(31, metaBinarySearch<int>(37, arr1, SIZE) == 43);
+  test(32, metaBinarySearch<int>(100, arr1, SIZE) == 126);
+  test(33, metaBinarySearch<double>(34.21, arr2, SIZE) == 47);
+  test(34, metaBinarySearch<double>(2.14, arr2, SIZE) == 0);
+  test(35, metaBinarySearch<long long>(4900, arr3, SIZE) == 86);
+  test(36, metaBinarySearch<long long>(2600, arr3, SIZE) == -1);
+
+  test(37, sentinelLinearSearch<int>(37, arr1, SIZE) == 43);
+  test(38, sentinelLinearSearch<int>(100, arr1, SIZE) == 126);
+  test(39, sentinelLinearSearch<double>(34.21, arr2, SIZE) == 47);
+  test(40, sentinelLinearSearch<double>(2.14, arr2, SIZE) == 0);
+  test(41, sentinelLinearSearch<long long>(4900, arr3, SIZE) == 86);
+  test(42, sentinelLinearSearch<long long>(2600, arr3, SIZE) == -1);
+
+  test(43, fibonacciSearch<int>(37, arr1, SIZE) == 43);
+  test(44, fibonacciSearch<int>(100, arr1, SIZE) == 126);
+  test(45, fibonacciSearch<double>(34.21, arr2, SIZE) == 47);
+  test(46, fibonacciSearch<double>(2.14, arr2, SIZE) == 0);
+  test(47, fibonacciSearch<long long>(4900, arr3, SIZE) == 86);
+  test(48, fibonacciSearch<long long>(2600, arr3, SIZE) == -1);
 
   std::cout << "Passed all tests successfully!\n";
 
