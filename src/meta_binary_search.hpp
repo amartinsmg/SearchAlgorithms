@@ -6,7 +6,7 @@
 #define META_BINARY_SEARCH_HPP
 
 /**
-  @brief Performs a meta binary search search on a sorted array to find a target value.
+  @brief Performs a meta binary search on a sorted array to find a target value.
   @tparam T The type of the elements in the array.
   @param target The target value to search for.
   @param arr The sorted array to search in.
