@@ -4,9 +4,12 @@ This project provides C++ implementations of various search algorithms. The impl
 
 - Binary Search
 - Exponential Search
+- Fibonacci Search
 - Interpolation Search
 - Jump Search
 - Linear Search
+- Meta Binary Search
+- Sentinel Linear Search
 
 ## Getting Started
 
