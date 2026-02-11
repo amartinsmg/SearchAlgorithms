@@ -24,7 +24,7 @@ int metaBinarySearch(T target, T *arr, int length)
   step = (int)round(sqrt((double)length));
   for (i = step; i < length && arr[i] < target; i += step)
     low = i;
-  high = std::min(length, i);
+  high = std::min(length - 1, i);
   while (low <= high)
   {
     mid = (low + high) / 2;
