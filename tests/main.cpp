@@ -1,5 +1,4 @@
 #include <iostream>
-#include <cassert>
 #include <binary_search.hpp>
 #include <exponential_search.hpp>
 #include <fibonacci_search.hpp>

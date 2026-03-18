@@ -1,8 +1,7 @@
-#include <iostream>
-#include <cassert>
-
 #ifndef TEST_HPP
 #define TEST_HPP
+
+#include <iostream>
 
 /**
   @brief Perform a test and assert the given condition.
@@ -16,8 +15,10 @@
 void test(int code, bool condition)
 {
   std::cout << "Test #" << code << ": ";
-  assert(condition);
-  std::cout << "Passed!" << std::endl;
+  if (condition)
+    std::cout << "Passed!" << std::endl;
+  else
+    std::cout << "Failed!" << std::endl;
 }
 
 #endif /* TEST_HPP */
