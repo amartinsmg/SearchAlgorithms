@@ -1,9 +1,8 @@
-#include <algorithm>
-#include <cassert>
-#include <cmath>
-
 #ifndef META_BINARY_SEARCH_HPP
 #define META_BINARY_SEARCH_HPP
+
+#include <algorithm>
+#include <cmath>
 
 /**
   @brief Performs a meta binary search on a sorted array to find a target value.
@@ -15,12 +14,13 @@
 */
 
 template <typename T>
-int metaBinarySearch(T target, T *arr, int length)
+static int metaBinarySearch(T target, T *arr, int length)
 {
+  if (length <= 0 || arr == nullptr)
+    return -1;
   int i, high, mid, step,
       low = 0,
       result = -1;
-  assert(length > 0);
   step = (int)round(sqrt((double)length));
   for (i = step; i < length && arr[i] < target; i += step)
     low = i;

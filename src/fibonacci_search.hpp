@@ -1,28 +1,28 @@
-#include <algorithm>
-#include <cassert>
-
 #ifndef FIBONACCI_SEARCH_HPP
 #define FIBONACCI_SEARCH_HPP
 
+#include <algorithm>
+
 /**
-  @brief Performs a Fibonacci search on a sorted array to find a target value.
-  @tparam T The type of the elements in the array.
-  @param target The target value to search for.
-  @param arr The sorted array to search in.
-  @param length The length of the array.
-  @return The index of the target value in the array if found, -1 otherwise.
-*/
+ * @brief Performs a Fibonacci search on a sorted array to find a target value.
+ * @tparam T The type of the elements in the array.
+ * @param target The target value to search for.
+ * @param arr The sorted array to search in.
+ * @param length The length of the array.
+ * @return The index of the target value in the array if found, -1 otherwise.
+ */
 
 template <typename T>
-int fibonacciSearch(T target, T *arr, int length)
+static int fibonacciSearch(T target, T *arr, int length)
 {
+  if (length <= 0 || arr == nullptr)
+    return -1;
   int i,
       low = 0,
       fibMMm2 = 0,
       fibMMm1 = 1,
       fibM = fibMMm2 + fibMMm1,
       result = -1;
-  assert(length > 0);
   while (fibM < length)
   {
     fibMMm2 = fibMMm1;

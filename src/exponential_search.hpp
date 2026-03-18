@@ -1,25 +1,25 @@
-#include <algorithm>
-#include <cassert>
-
 #ifndef EXPONENTIAL_SEARCH_HPP
 #define EXPONENTIAL_SEARCH_HPP
 
+#include <algorithm>
+
 /**
-  @brief Performs a exponential search on a sorted array to find a target value.
-  @tparam T The type of the elements in the array.
-  @param target The target value to search for.
-  @param arr The sorted array to search in.
-  @param length The length of the array.
-  @return The index of the target value in the array if found, -1 otherwise.
-*/
+ * @brief Performs a exponential search on a sorted array to find a target value.
+ * @tparam T The type of the elements in the array.
+ * @param target The target value to search for.
+ * @param arr The sorted array to search in.
+ * @param length The length of the array.
+ * @return The index of the target value in the array if found, -1 otherwise.
+ */
 
 template <typename T>
-int exponentialSearch(T target, T *arr, int length)
+static int exponentialSearch(T target, T *arr, int length)
 {
+  if (length <= 0 || arr == nullptr)
+    return -1;
   int high, i, mid,
       low = 0,
       result = -1;
-  assert(length > 0);
   for (i = 1; i < length && arr[i - 1] < target; i *= 2)
     low = i - 1;
   high = std::min(i, length) - 1;

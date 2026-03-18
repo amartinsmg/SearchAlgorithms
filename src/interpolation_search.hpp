@@ -1,5 +1,3 @@
-#include <cassert>
-
 #ifndef INTERPOLATION_SEARCH_HPP
 #define INTERPOLATION_SEARCH_HPP
 
@@ -13,13 +11,14 @@
 */
 
 template <typename T>
-int interpolationSearch(T target, T *arr, int length)
+static int interpolationSearch(T target, T *arr, int length)
 {
+  if (length <= 0 || arr == nullptr)
+    return -1;
   int low = 0,
       high = length - 1,
       pos,
       result = -1;
-  assert(length > 0);
   while (low <= high && arr[low] <= target && arr[high] >= target)
   {
     pos = arr[low] < arr[high] ? low + (high - low) * (int)((target - arr[low]) / (arr[high] - arr[low])) : low;

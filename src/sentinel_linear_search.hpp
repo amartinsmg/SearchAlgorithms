@@ -1,5 +1,3 @@
-#include <cassert>
-
 #ifndef SENTINEL_LINEAR_SEARCH_HPP
 #define SENTINEL_LINEAR_SEARCH_HPP
 
@@ -13,11 +11,12 @@
 */
 
 template <typename T>
-int sentinelLinearSearch(T target, T *arr, int length)
+static int sentinelLinearSearch(T target, T *arr, int length)
 {
+  if (length <= 0 || arr == nullptr)
+    return -1;
   int i, result = -1;
   T last;
-  assert(length > 0);
   last = arr[length - 1];
   arr[length - 1] = target;
   i = 0;

@@ -1,5 +1,3 @@
-#include <cassert>
-
 #ifndef LINEAR_SEARCH_HPP
 #define LINEAR_SEARCH_HPP
 
@@ -13,10 +11,11 @@
 */
 
 template <typename T>
-int linearSearch(T target, T *arr, int length)
+static int linearSearch(T target, T *arr, int length)
 {
+  if (length <= 0 || arr == nullptr)
+    return -1;
   int i, result = -1;
-  assert(length > 0);
   for (i = 0; i < length; i++)
     if (arr[i] == target)
     {
