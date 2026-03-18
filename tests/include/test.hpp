@@ -18,7 +18,10 @@ static void test(int code, bool condition)
   if (condition)
     std::cout << "Passed!" << std::endl;
   else
+  {
     std::cout << "Failed!" << std::endl;
+    throw std::runtime_error("Condition not met!");
+  }
 }
 
 #endif /* TEST_HPP */
