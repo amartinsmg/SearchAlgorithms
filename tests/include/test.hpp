@@ -12,7 +12,7 @@
   @return None.
 */
 
-void test(int code, bool condition)
+static void test(int code, bool condition)
 {
   std::cout << "Test #" << code << ": ";
   if (condition)
