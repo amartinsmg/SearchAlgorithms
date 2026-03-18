@@ -21,6 +21,7 @@
 
 int main()
 {
+  int status = EXIT_FAILURE;
   int arr1[SIZE] = {2, 2, 2, 2, 4, 5, 6, 6, 6, 7, 7, 8, 8, 8, 9,
                     10, 10, 11, 12, 13, 15, 18, 20, 22, 24, 24,
                     25, 25, 26, 27, 28, 28, 30, 31, 32, 32, 33,
@@ -67,63 +68,72 @@ int main()
                           8281, 8649, 8836, 8836, 9025, 9025, 9216, 9216,
                           9216, 9604, 10000, 10000};
 
-  test(1, linearSearch<int>(37, arr1, SIZE) == 43);
-  test(2, linearSearch<int>(100, arr1, SIZE) == 126);
-  test(3, linearSearch<double>(34.21, arr2, SIZE) == 47);
-  test(4, linearSearch<double>(2.14, arr2, SIZE) == 0);
-  test(5, linearSearch<long long>(4900, arr3, SIZE) == 86);
-  test(6, linearSearch<long long>(2600, arr3, SIZE) == -1);
+  try
+  {
+    test(1, linearSearch<int>(37, arr1, SIZE) == 43);
+    test(2, linearSearch<int>(100, arr1, SIZE) == 126);
+    test(3, linearSearch<double>(34.21, arr2, SIZE) == 47);
+    test(4, linearSearch<double>(2.14, arr2, SIZE) == 0);
+    test(5, linearSearch<long long>(4900, arr3, SIZE) == 86);
+    test(6, linearSearch<long long>(2600, arr3, SIZE) == -1);
 
-  test(7, binarySearch<int>(37, arr1, SIZE) == 43);
-  test(8, binarySearch<int>(100, arr1, SIZE) == 126);
-  test(9, binarySearch<double>(34.21, arr2, SIZE) == 47);
-  test(10, binarySearch<double>(2.14, arr2, SIZE) == 0);
-  test(11, binarySearch<long long>(4900, arr3, SIZE) == 86);
-  test(12, binarySearch<long long>(2600, arr3, SIZE) == -1);
+    test(7, binarySearch<int>(37, arr1, SIZE) == 43);
+    test(8, binarySearch<int>(100, arr1, SIZE) == 126);
+    test(9, binarySearch<double>(34.21, arr2, SIZE) == 47);
+    test(10, binarySearch<double>(2.14, arr2, SIZE) == 0);
+    test(11, binarySearch<long long>(4900, arr3, SIZE) == 86);
+    test(12, binarySearch<long long>(2600, arr3, SIZE) == -1);
 
-  test(13, jumpSearch<int>(37, arr1, SIZE) == 43);
-  test(14, jumpSearch<int>(100, arr1, SIZE) == 126);
-  test(15, jumpSearch<double>(34.21, arr2, SIZE) == 47);
-  test(16, jumpSearch<double>(2.14, arr2, SIZE) == 0);
-  test(17, jumpSearch<long long>(4900, arr3, SIZE) == 86);
-  test(18, jumpSearch<long long>(2600, arr3, SIZE) == -1);
+    test(13, jumpSearch<int>(37, arr1, SIZE) == 43);
+    test(14, jumpSearch<int>(100, arr1, SIZE) == 126);
+    test(15, jumpSearch<double>(34.21, arr2, SIZE) == 47);
+    test(16, jumpSearch<double>(2.14, arr2, SIZE) == 0);
+    test(17, jumpSearch<long long>(4900, arr3, SIZE) == 86);
+    test(18, jumpSearch<long long>(2600, arr3, SIZE) == -1);
 
-  test(19, exponentialSearch<int>(37, arr1, SIZE) == 43);
-  test(20, exponentialSearch<int>(100, arr1, SIZE) == 126);
-  test(21, exponentialSearch<double>(34.21, arr2, SIZE) == 47);
-  test(22, exponentialSearch<double>(2.14, arr2, SIZE) == 0);
-  test(23, exponentialSearch<long long>(4900, arr3, SIZE) == 86);
-  test(24, exponentialSearch<long long>(2600, arr3, SIZE) == -1);
+    test(19, exponentialSearch<int>(37, arr1, SIZE) == 43);
+    test(20, exponentialSearch<int>(100, arr1, SIZE) == 126);
+    test(21, exponentialSearch<double>(34.21, arr2, SIZE) == 47);
+    test(22, exponentialSearch<double>(2.14, arr2, SIZE) == 0);
+    test(23, exponentialSearch<long long>(4900, arr3, SIZE) == 86);
+    test(24, exponentialSearch<long long>(2600, arr3, SIZE) == -1);
 
-  test(25, interpolationSearch<int>(37, arr1, SIZE) == 43);
-  test(26, interpolationSearch<int>(100, arr1, SIZE) == 126);
-  test(27, interpolationSearch<double>(34.21, arr2, SIZE) == 47);
-  test(28, interpolationSearch<double>(2.14, arr2, SIZE) == 0);
-  test(29, interpolationSearch<long long>(4900, arr3, SIZE) == 86);
-  test(30, interpolationSearch<long long>(2600, arr3, SIZE) == -1);
+    test(25, interpolationSearch<int>(37, arr1, SIZE) == 43);
+    test(26, interpolationSearch<int>(100, arr1, SIZE) == 126);
+    test(27, interpolationSearch<double>(34.21, arr2, SIZE) == 47);
+    test(28, interpolationSearch<double>(2.14, arr2, SIZE) == 0);
+    test(29, interpolationSearch<long long>(4900, arr3, SIZE) == 86);
+    test(30, interpolationSearch<long long>(2600, arr3, SIZE) == -1);
 
-  test(31, metaBinarySearch<int>(37, arr1, SIZE) == 43);
-  test(32, metaBinarySearch<int>(100, arr1, SIZE) == 126);
-  test(33, metaBinarySearch<double>(34.21, arr2, SIZE) == 47);
-  test(34, metaBinarySearch<double>(2.14, arr2, SIZE) == 0);
-  test(35, metaBinarySearch<long long>(4900, arr3, SIZE) == 86);
-  test(36, metaBinarySearch<long long>(2600, arr3, SIZE) == -1);
+    test(31, metaBinarySearch<int>(37, arr1, SIZE) == 43);
+    test(32, metaBinarySearch<int>(100, arr1, SIZE) == 126);
+    test(33, metaBinarySearch<double>(34.21, arr2, SIZE) == 47);
+    test(34, metaBinarySearch<double>(2.14, arr2, SIZE) == 0);
+    test(35, metaBinarySearch<long long>(4900, arr3, SIZE) == 86);
+    test(36, metaBinarySearch<long long>(2600, arr3, SIZE) == -1);
 
-  test(37, sentinelLinearSearch<int>(37, arr1, SIZE) == 43);
-  test(38, sentinelLinearSearch<int>(100, arr1, SIZE) == 126);
-  test(39, sentinelLinearSearch<double>(34.21, arr2, SIZE) == 47);
-  test(40, sentinelLinearSearch<double>(2.14, arr2, SIZE) == 0);
-  test(41, sentinelLinearSearch<long long>(4900, arr3, SIZE) == 86);
-  test(42, sentinelLinearSearch<long long>(2600, arr3, SIZE) == -1);
+    test(37, sentinelLinearSearch<int>(37, arr1, SIZE) == 43);
+    test(38, sentinelLinearSearch<int>(100, arr1, SIZE) == 126);
+    test(39, sentinelLinearSearch<double>(34.21, arr2, SIZE) == 47);
+    test(40, sentinelLinearSearch<double>(2.14, arr2, SIZE) == 0);
+    test(41, sentinelLinearSearch<long long>(4900, arr3, SIZE) == 86);
+    test(42, sentinelLinearSearch<long long>(2600, arr3, SIZE) == -1);
 
-  test(43, fibonacciSearch<int>(37, arr1, SIZE) == 43);
-  test(44, fibonacciSearch<int>(100, arr1, SIZE) == 126);
-  test(45, fibonacciSearch<double>(34.21, arr2, SIZE) == 47);
-  test(46, fibonacciSearch<double>(2.14, arr2, SIZE) == 0);
-  test(47, fibonacciSearch<long long>(4900, arr3, SIZE) == 86);
-  test(48, fibonacciSearch<long long>(2600, arr3, SIZE) == -1);
+    test(43, fibonacciSearch<int>(37, arr1, SIZE) == 43);
+    test(44, fibonacciSearch<int>(100, arr1, SIZE) == 126);
+    test(45, fibonacciSearch<double>(34.21, arr2, SIZE) == 47);
+    test(46, fibonacciSearch<double>(2.14, arr2, SIZE) == 0);
+    test(47, fibonacciSearch<long long>(4900, arr3, SIZE) == 86);
+    test(48, fibonacciSearch<long long>(2600, arr3, SIZE) == -1);
 
-  std::cout << "Passed all tests successfully!\n";
+    std::cout << "Passed all tests successfully!\n";
 
-  return 0;
+    status = EXIT_SUCCESS;
+  }
+  catch (const std::exception &e)
+  {
+    std::cerr << e.what() << '\n';
+  }
+
+  return status;
 }
