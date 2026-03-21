@@ -1,38 +1,43 @@
 #ifndef BINARY_SEARCH_HPP
 #define BINARY_SEARCH_HPP
 
-/**
- * @brief Performs a binary search on a sorted array to find a target value.
- * @tparam T The type of the elements in the array.
- * @param target The target value to search for.
- * @param arr The sorted array to search in.
- * @param length The length of the array.
- * @return The index of the target value in the array if found, -1 otherwise.
- */
+#include <vector>
 
-template <typename T>
-static int binarySearch(T target, T *arr, int length)
+namespace Search
 {
-  if (length <= 0 || arr == nullptr)
-    return -1;
-  int low = 0,
-      high = length - 1,
-      mid = high / 2,
-      result = -1;
-  while (low <= high)
+  /**
+   * @brief Performs a binary search on a sorted vector to find a target value.
+   * @tparam T The type of the elements in the vector.
+   * @param target The target value to search for.
+   * @param arr The sorted vector to search in.
+   * @return The index of the target value in the vector if found, -1 otherwise.
+   */
+
+  template <typename T>
+  static int binarySearch(T target, std::vector<T> arr)
   {
-    if (arr[mid] == target)
+    if (arr.size() <= 0)
+      return -1;
+    int low = 0,
+        high = arr.size() - 1,
+        mid = high / 2,
+        result = -1;
+    while (low <= high)
     {
-      result = mid;
-      break;
+      if (arr[mid] == target)
+      {
+        result = mid;
+        break;
+      }
+      else if (arr[mid] > target)
+        high = mid - 1;
+      else
+        low = mid + 1;
+      mid = (low + high) / 2;
     }
-    else if (arr[mid] > target)
-      high = mid - 1;
-    else
-      low = mid + 1;
-    mid = (low + high) / 2;
+    return result;
   }
-  return result;
-}
+
+} // namespace Search
 
 #endif /* BINARY_SEARCH_HPP */
