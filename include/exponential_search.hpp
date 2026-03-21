@@ -2,41 +2,46 @@
 #define EXPONENTIAL_SEARCH_HPP
 
 #include <algorithm>
+#include <vector>
 
-/**
- * @brief Performs a exponential search on a sorted array to find a target value.
- * @tparam T The type of the elements in the array.
- * @param target The target value to search for.
- * @param arr The sorted array to search in.
- * @param length The length of the array.
- * @return The index of the target value in the array if found, -1 otherwise.
- */
-
-template <typename T>
-static int exponentialSearch(T target, T *arr, int length)
+namespace Search
 {
-  if (length <= 0 || arr == nullptr)
-    return -1;
-  int high, i, mid,
-      low = 0,
-      result = -1;
-  for (i = 1; i < length && arr[i - 1] < target; i *= 2)
-    low = i - 1;
-  high = std::min(i, length) - 1;
-  while (low <= high)
+  /**
+   * @brief Performs a exponential on a sorted vector to find a target value.
+   * @tparam T The type of the elements in the vector.
+   * @param target The target value to search for.
+   * @param arr The sorted vector to search in.
+   * @return The index of the target value in the vector if found, -1 otherwise.
+   */
+
+  template <typename T>
+  static int exponentialSearch(T target, std::vector<T> arr)
   {
-    mid = (low + high) / 2;
-    if (arr[mid] == target)
+    if (arr.size() <= 0)
+      return -1;
+    int high, i, mid,
+        length = arr.size(),
+        low = 0,
+        result = -1;
+    for (i = 1; i < length && arr[i - 1] < target; i *= 2)
+      low = i - 1;
+    high = std::min(i, length) - 1;
+    while (low <= high)
     {
-      result = mid;
-      break;
+      mid = (low + high) / 2;
+      if (arr[mid] == target)
+      {
+        result = mid;
+        break;
+      }
+      else if (arr[mid] > target)
+        high = mid - 1;
+      else
+        low = mid + 1;
     }
-    else if (arr[mid] > target)
-      high = mid - 1;
-    else
-      low = mid + 1;
+    return result;
   }
-  return result;
-}
+
+} // namespace Search
 
 #endif /* EXPONENTIAL_SEARCH_HPP */
