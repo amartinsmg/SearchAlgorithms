@@ -1,15 +1,8 @@
 #include <iostream>
 #include <vector>
-#include <binary_search.hpp>
-#include <exponential_search.hpp>
-#include <fibonacci_search.hpp>
-#include <interpolation_search.hpp>
-#include <jump_search.hpp>
-#include <linear_search.hpp>
-#include <meta_binary_search.hpp>
-#include <sentinel_search.hpp>
+#include <sort.hpp>
 
-static void test(int code, bool condition)
+inline static void test(int code, bool condition)
 {
   std::cout << "Test #" << code << ": ";
   if (condition)
@@ -128,7 +121,7 @@ int main()
     test(47, Search::fibonacciSearch<long long>(4900, arr3) == 86);
     test(48, Search::fibonacciSearch<long long>(2600, arr3) == -1);
 
-    std::cout << "Passed all tests successfully!\n";
+    std::cout << "Passed all tests successfully!\n\n";
 
     status = EXIT_SUCCESS;
   }
