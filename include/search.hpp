@@ -1,5 +1,5 @@
-#ifndef SORT_HPP
-#define SORT_HPP
+#ifndef SEARCH_HPP
+#define SEARCH_HPP
 
 #include "binary_search.hpp"
 #include "exponential_search.hpp"
@@ -10,4 +10,4 @@
 #include "meta_binary_search.hpp"
 #include "sentinel_search.hpp"
 
-#endif /* SORT_HPP */
+#endif /* SEARCH_HPP */
