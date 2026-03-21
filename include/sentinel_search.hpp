@@ -1,5 +1,5 @@
-#ifndef SENTINEL_LINEAR_SEARCH_HPP
-#define SENTINEL_LINEAR_SEARCH_HPP
+#ifndef SENTINEL_SEARCH_HPP
+#define SENTINEL_SEARCH_HPP
 
 #include <vector>
 
@@ -14,7 +14,7 @@ namespace Search
    */
 
   template <typename T>
-  static int sentinelLinearSearch(T target, std::vector<T> arr)
+  static int sentinelSearch(T target, std::vector<T> arr)
   {
     if (arr.size() <= 0)
       return -1;
@@ -35,4 +35,4 @@ namespace Search
 
 } // namespace Search
 
-#endif /* SENTINEL_LINEAR_SEARCH_HPP */
+#endif /* SENTINEL_SEARCH_HPP */
