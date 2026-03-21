@@ -2,57 +2,62 @@
 #define FIBONACCI_SEARCH_HPP
 
 #include <algorithm>
+#include <vector>
 
-/**
- * @brief Performs a Fibonacci search on a sorted array to find a target value.
- * @tparam T The type of the elements in the array.
- * @param target The target value to search for.
- * @param arr The sorted array to search in.
- * @param length The length of the array.
- * @return The index of the target value in the array if found, -1 otherwise.
- */
-
-template <typename T>
-static int fibonacciSearch(T target, T *arr, int length)
+namespace Search
 {
-  if (length <= 0 || arr == nullptr)
-    return -1;
-  int i,
-      low = 0,
-      fibMMm2 = 0,
-      fibMMm1 = 1,
-      fibM = fibMMm2 + fibMMm1,
-      result = -1;
-  while (fibM < length)
+  /**
+   * @brief Performs a Fibonacci search on a sorted vector to find a target value.
+   * @tparam T The type of the elements in the vector.
+   * @param target The target value to search for.
+   * @param arr The sorted vector to search in.
+   * @return The index of the target value in the vector if found, -1 otherwise.
+   */
+
+  template <typename T>
+  static int fibonacciSearch(T target, std::vector<T> arr)
   {
-    fibMMm2 = fibMMm1;
-    fibMMm1 = fibM;
-    fibM = fibMMm1 + fibMMm2;
-  }
-  while (fibM > 0 && fibMMm1 > 0)
-  {
-    i = std::min(low + fibMMm2, length - 1);
-    if (arr[i] == target)
+    if (arr.size() <= 0)
+      return -1;
+    int i,
+        length = arr.size(),
+        low = 0,
+        fibMMm2 = 0,
+        fibMMm1 = 1,
+        fibM = fibMMm2 + fibMMm1,
+        result = -1;
+    while (fibM < length)
     {
-      result = i;
-      break;
+      fibMMm2 = fibMMm1;
+      fibMMm1 = fibM;
+      fibM = fibMMm1 + fibMMm2;
     }
-    else if (arr[i] < target)
+    while (fibM > 0 && fibMMm1 > 0)
     {
-      low += fibMMm2;
-      fibM = fibMMm1;
-      fibMMm1 = fibMMm2;
-      fibMMm2 = fibM - fibMMm1;
+      i = std::min(low + fibMMm2, length - 1);
+      if (arr[i] == target)
+      {
+        result = i;
+        break;
+      }
+      else if (arr[i] < target)
+      {
+        low += fibMMm2;
+        fibM = fibMMm1;
+        fibMMm1 = fibMMm2;
+        fibMMm2 = fibM - fibMMm1;
+      }
+      else
+      {
+        fibM = fibMMm2;
+        fibMMm1 = fibMMm1 - fibMMm2;
+        fibMMm2 = fibM - fibMMm1;
+      }
     }
-    else
-    {
-      fibM = fibMMm2;
-      fibMMm1 = fibMMm1 - fibMMm2;
-      fibMMm2 = fibM - fibMMm1;
-    }
+
+    return result;
   }
 
-  return result;
-}
+} // namespace Search
 
 #endif /* FIBONACCI_SEARCH_HPP */
