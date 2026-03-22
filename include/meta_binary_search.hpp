@@ -24,8 +24,8 @@ static int metaBinarySearch(std::vector<T> arr, T target) {
   for (i = step; i < length && arr[i] < target; i += step)
     low = i;
   high = std::min(length - 1, i);
-  mid = (low + high) / 2;
   while (low <= high) {
+    mid = (low + high) / 2;
     if (arr[mid] == target) {
       result = mid;
       break;
