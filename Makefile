@@ -9,7 +9,7 @@ test: test-bin
 	./debug/test
 
 test-bin: dir
-	g++ -o debug/test -Iinclude -fsanitize=address tests/main.cpp
+	g++ -o debug/test -Iinclude -Wall -fsanitize=address -std=c++17 tests/main.cpp
 
 dir:
 	mkdir -p debug
