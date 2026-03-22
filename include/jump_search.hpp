@@ -9,8 +9,8 @@ namespace Search {
 /**
  * @brief Performs a jump search on a sorted vector to find a target value.
  * @tparam T The type of the elements in the vector.
- * @param target The target value to search for.
  * @param arr The sorted vector to search in.
+ * @param target The target value to search for.
  * @return The index of the target value in the vector if found, -1 otherwise.
  */
 
