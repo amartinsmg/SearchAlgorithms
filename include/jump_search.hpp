@@ -15,9 +15,10 @@ namespace Search {
  */
 
 template <typename T> static int jumpSearch(std::vector<T> arr, T target) {
-  if (arr.size() == 0)
+  int i, high, step;
+  int length = arr.size(), low = 0, result = -1;
+  if (length == 0)
     return -1;
-  int i, high, step, length = arr.size(), low = 0, result = -1;
   step = (int)round(sqrt((double)length));
   for (i = step; i < length && arr[i] < target; i += step)
     low = i;

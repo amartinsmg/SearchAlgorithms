@@ -14,9 +14,10 @@ namespace Search {
  */
 
 template <typename T> static int sentinelSearch(std::vector<T> arr, T target) {
-  if (arr.size() == 0)
+  int i;
+  int length = arr.size(), result = -1;
+  if (length == 0)
     return -1;
-  int i, length = arr.size(), result = -1;
   T last;
   last = arr[length - 1];
   arr[length - 1] = target;

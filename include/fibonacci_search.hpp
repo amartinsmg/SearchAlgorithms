@@ -14,10 +14,11 @@ namespace Search {
  */
 
 template <typename T> static int fibonacciSearch(std::vector<T> arr, T target) {
-  if (arr.size() == 0)
+  int i;
+  int length = arr.size(), low = 0, fibMMm2 = 0, fibMMm1 = 1,
+  fibM = fibMMm2 + fibMMm1, result = -1;
+  if (length == 0)
     return -1;
-  int i, length = arr.size(), low = 0, fibMMm2 = 0, fibMMm1 = 1,
-         fibM = fibMMm2 + fibMMm1, result = -1;
   while (fibM < length) {
     fibMMm2 = fibMMm1;
     fibMMm1 = fibM;
