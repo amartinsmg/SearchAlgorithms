@@ -1,7 +1,7 @@
+#include "search.hpp"
 #include <cstdio>
 #include <iostream>
 #include <vector>
-#include "search.hpp"
 
 inline static void test(int code, bool condition) {
   printf("Test #%02d: ", code);
@@ -50,6 +50,7 @@ int main(void) {
       5476, 5625, 5776, 5929, 6084, 6241,  6241, 6400, 6561, 6724, 6724, 6889,
       6889, 7396, 7569, 7569, 7569, 7921,  8100, 8281, 8649, 8836, 8836, 9025,
       9025, 9216, 9216, 9216, 9604, 10000, 10000};
+  std::vector<long long> arr4(0);
 
   try {
     test(1, Search::linearSearch<int>(arr1, 37) == 43);
@@ -58,55 +59,63 @@ int main(void) {
     test(4, Search::linearSearch<double>(arr2, 2.14) == 0);
     test(5, Search::linearSearch<long long>(arr3, 4900) == 86);
     test(6, Search::linearSearch<long long>(arr3, 2600) == -1);
+    test(7, Search::linearSearch<long long>(arr4, 10) == -1);
 
-    test(7, Search::binarySearch<int>(arr1, 37) == 43);
-    test(8, Search::binarySearch<int>(arr1, 100) == 126);
-    test(9, Search::binarySearch<double>(arr2, 34.21) == 47);
-    test(10, Search::binarySearch<double>(arr2, 2.14) == 0);
-    test(11, Search::binarySearch<long long>(arr3, 4900) == 86);
-    test(12, Search::binarySearch<long long>(arr3, 2600) == -1);
+    test(8, Search::binarySearch<int>(arr1, 37) == 43);
+    test(9, Search::binarySearch<int>(arr1, 100) == 126);
+    test(10, Search::binarySearch<double>(arr2, 34.21) == 47);
+    test(11, Search::binarySearch<double>(arr2, 2.14) == 0);
+    test(12, Search::binarySearch<long long>(arr3, 4900) == 86);
+    test(13, Search::binarySearch<long long>(arr3, 2600) == -1);
+    test(14, Search::binarySearch<long long>(arr4, 10) == -1);
 
-    test(13, Search::jumpSearch<int>(arr1, 37) == 43);
-    test(14, Search::jumpSearch<int>(arr1, 100) == 126);
-    test(15, Search::jumpSearch<double>(arr2, 34.21) == 47);
-    test(16, Search::jumpSearch<double>(arr2, 2.14) == 0);
-    test(17, Search::jumpSearch<long long>(arr3, 4900) == 86);
-    test(18, Search::jumpSearch<long long>(arr3, 2600) == -1);
+    test(15, Search::jumpSearch<int>(arr1, 37) == 43);
+    test(16, Search::jumpSearch<int>(arr1, 100) == 126);
+    test(17, Search::jumpSearch<double>(arr2, 34.21) == 47);
+    test(18, Search::jumpSearch<double>(arr2, 2.14) == 0);
+    test(19, Search::jumpSearch<long long>(arr3, 4900) == 86);
+    test(20, Search::jumpSearch<long long>(arr3, 2600) == -1);
+    test(21, Search::jumpSearch<long long>(arr4, 10) == -1);
 
-    test(19, Search::exponentialSearch<int>(arr1, 37) == 43);
-    test(20, Search::exponentialSearch<int>(arr1, 100) == 126);
-    test(21, Search::exponentialSearch<double>(arr2, 34.21) == 47);
-    test(22, Search::exponentialSearch<double>(arr2, 2.14) == 0);
-    test(23, Search::exponentialSearch<long long>(arr3, 4900) == 86);
-    test(24, Search::exponentialSearch<long long>(arr3, 2600) == -1);
+    test(22, Search::exponentialSearch<int>(arr1, 37) == 43);
+    test(23, Search::exponentialSearch<int>(arr1, 100) == 126);
+    test(24, Search::exponentialSearch<double>(arr2, 34.21) == 47);
+    test(25, Search::exponentialSearch<double>(arr2, 2.14) == 0);
+    test(26, Search::exponentialSearch<long long>(arr3, 4900) == 86);
+    test(27, Search::exponentialSearch<long long>(arr3, 2600) == -1);
+    test(28, Search::exponentialSearch<long long>(arr4, 10) == -1);
 
-    test(25, Search::interpolationSearch<int>(arr1, 37) == 43);
-    test(26, Search::interpolationSearch<int>(arr1, 100) == 126);
-    test(27, Search::interpolationSearch<double>(arr2, 34.21) == 47);
-    test(28, Search::interpolationSearch<double>(arr2, 2.14) == 0);
-    test(29, Search::interpolationSearch<long long>(arr3, 4900) == 86);
-    test(30, Search::interpolationSearch<long long>(arr3, 2600) == -1);
+    test(29, Search::interpolationSearch<int>(arr1, 37) == 43);
+    test(30, Search::interpolationSearch<int>(arr1, 100) == 126);
+    test(31, Search::interpolationSearch<double>(arr2, 34.21) == 47);
+    test(32, Search::interpolationSearch<double>(arr2, 2.14) == 0);
+    test(33, Search::interpolationSearch<long long>(arr3, 4900) == 86);
+    test(34, Search::interpolationSearch<long long>(arr3, 2600) == -1);
+    test(35, Search::interpolationSearch<long long>(arr4, 10) == -1);
 
-    test(31, Search::metaBinarySearch<int>(arr1, 37) == 43);
-    test(32, Search::metaBinarySearch<int>(arr1, 100) == 126);
-    test(33, Search::metaBinarySearch<double>(arr2, 34.21) == 47);
-    test(34, Search::metaBinarySearch<double>(arr2, 2.14) == 0);
-    test(35, Search::metaBinarySearch<long long>(arr3, 4900) == 86);
-    test(36, Search::metaBinarySearch<long long>(arr3, 2600) == -1);
+    test(36, Search::metaBinarySearch<int>(arr1, 37) == 43);
+    test(37, Search::metaBinarySearch<int>(arr1, 100) == 126);
+    test(38, Search::metaBinarySearch<double>(arr2, 34.21) == 47);
+    test(39, Search::metaBinarySearch<double>(arr2, 2.14) == 0);
+    test(40, Search::metaBinarySearch<long long>(arr3, 4900) == 86);
+    test(41, Search::metaBinarySearch<long long>(arr3, 2600) == -1);
+    test(42, Search::metaBinarySearch<long long>(arr4, 10) == -1);
 
-    test(37, Search::sentinelSearch<int>(arr1, 37) == 43);
-    test(38, Search::sentinelSearch<int>(arr1, 100) == 126);
-    test(39, Search::sentinelSearch<double>(arr2, 34.21) == 47);
-    test(40, Search::sentinelSearch<double>(arr2, 2.14) == 0);
-    test(41, Search::sentinelSearch<long long>(arr3, 4900) == 86);
-    test(42, Search::sentinelSearch<long long>(arr3, 2600) == -1);
+    test(43, Search::sentinelSearch<int>(arr1, 37) == 43);
+    test(44, Search::sentinelSearch<int>(arr1, 100) == 126);
+    test(45, Search::sentinelSearch<double>(arr2, 34.21) == 47);
+    test(46, Search::sentinelSearch<double>(arr2, 2.14) == 0);
+    test(47, Search::sentinelSearch<long long>(arr3, 4900) == 86);
+    test(48, Search::sentinelSearch<long long>(arr3, 2600) == -1);
+    test(49, Search::sentinelSearch<long long>(arr4, 10) == -1);
 
-    test(43, Search::fibonacciSearch<int>(arr1, 37) == 43);
-    test(44, Search::fibonacciSearch<int>(arr1, 100) == 126);
-    test(45, Search::fibonacciSearch<double>(arr2, 34.21) == 47);
-    test(46, Search::fibonacciSearch<double>(arr2, 2.14) == 0);
-    test(47, Search::fibonacciSearch<long long>(arr3, 4900) == 86);
-    test(48, Search::fibonacciSearch<long long>(arr3, 2600) == -1);
+    test(50, Search::fibonacciSearch<int>(arr1, 37) == 43);
+    test(51, Search::fibonacciSearch<int>(arr1, 100) == 126);
+    test(52, Search::fibonacciSearch<double>(arr2, 34.21) == 47);
+    test(53, Search::fibonacciSearch<double>(arr2, 2.14) == 0);
+    test(54, Search::fibonacciSearch<long long>(arr3, 4900) == 86);
+    test(55, Search::fibonacciSearch<long long>(arr3, 2600) == -1);
+    test(56, Search::fibonacciSearch<long long>(arr4, 10) == -1);
 
     std::cout << "Passed all tests successfully!" << std::endl << std::endl;
 
