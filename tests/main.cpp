@@ -4,13 +4,9 @@
 #include <vector>
 
 inline static void test(int code, bool condition) {
-  printf("Test #%02d: ", code);
-  if (condition)
-    std::cout << "Passed!" << std::endl;
-  else {
-    std::cout << "Failed!" << std::endl;
+  printf("Test #%02d: %s\n", code, condition ? "Passed!" : "Failed!");
+  if (!condition)
     throw std::runtime_error("Condition not met!");
-  }
 }
 
 int main(void) {
