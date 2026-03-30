@@ -13,7 +13,8 @@ namespace Search {
  */
 
 template <typename T> static int linearSearch(std::vector<T> arr, T target) {
-  int i, length = arr.size(), result = -1;
+  int i;
+  int length = arr.size(), result = -1;
   for (i = 0; i < length; i++)
     if (arr[i] == target) {
       result = i;
