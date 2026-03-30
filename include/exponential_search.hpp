@@ -15,7 +15,8 @@ namespace Search {
 
 template <typename T>
 static int exponentialSearch(std::vector<T> arr, T target) {
-  int high, i, mid, length = arr.size(), low = 0, result = -1;
+  int high, i, mid;
+  int length = arr.size(), low = 0, result = -1;
   for (i = 1; i < length && arr[i - 1] < target; i *= 2)
     low = i - 1;
   high = std::min(i, length) - 1;
